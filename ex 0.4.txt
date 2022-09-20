@@ -2,24 +2,38 @@ title Post new Note
 
 Brownser->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
 Brownser->Server:{content:123} ( Eg: typing 123 to the form)
-note left of Brownser: By using the POST request, the browser want to add new data 
-note left of Brownser: to the database with the request data in json object {note: data}
+note left of Brownser: 
+By using the POST request, the browser want to add new data 
+end note
+note left of Brownser:
+To the database with the request data in json object {note: data}
+end note
 Server-->Brownser: Status Code 302: Redirect to address: https://studies.cs.helsinki.fi/exampleapp/notes
-note left of Server: After the data is added to the database
-note left of Server:  the backend server will reroute the browser to the address https://studies.cs.helsinki.fi/exampleapp/notes
+note left of Server:
+After the data is added to the database
+the backend server will reroute the browser to the address https://studies.cs.helsinki.fi/exampleapp/notes
+end note
 Brownser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
 Server-->Brownser: HTML-code ( index.html) (Status Code: 304)
 Brownser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
 Server-->Brownser: main.css (Status Code: 304)
 Brownser-->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
 Server-->Brownser: main.js (Status Code: 304)
-note left of Server: Status Code 304 means: Not Modified. When a client first visit the website, all the html, css and js code are stored in browser's cache.
-note left of Server: This mean that whenever the browser is reloaded, for exaxaple: after add new note, the browser will get the code from the cache instead from the Server
-note left of Server: This helps with the website performance.
-note left of Server: browser starts executeing js-code that fetch the JSON data from : https://studies.cs.helsinki.fi/exampleapp/data.json 
+note left of Server:
+Status Code 304 means: Not Modified. When a client first visit the website, all the html, css and js code are stored in browser's cache.
+note left of Server: This mean that whenever the browser is reloaded, for exaxaple: after add new note, the browser will get the code from the cache instead from the Server.
+end note
+note left of Server:
+This helps with the website performance.
+end note
+note left of Server: 
+Browser starts executeing js-code that fetch the JSON data from : https://studies.cs.helsinki.fi/exampleapp/data.json 
+end note
 Brownser->Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
 Server->Brownser: [{content:123,date:2022-09-18T11:55:20.059Z},..]
-note left of Brownser: browser executes the event handler that renders notes to display
+note left of Brownser:
+Browser executes the event handler that renders notes to display.
+end note
 
 
 
