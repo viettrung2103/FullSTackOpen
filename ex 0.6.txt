@@ -1,0 +1,26 @@
+
+
+summary->browser:
+note over summary:
+Create a new note in SPA page:
+end note
+note over browser:
+When we type a note in a text area and press Send
+
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+browser->server: {content:'hi', date:'2022-09-27T20:11:48.167Z'}
+note over server:
+When a new note is added, these following behaviours happened
+end note
+note over server: 
+1/ the js prevent the form to send data to BE server traditionally
+2/ a new data object 'note' is added to 'notes' array
+3/ the new note is rendered and displayed in broswer through DOM manipulation 
+4/ the new note is sent to BE server
+end note 
+
+
+
+
+
