@@ -1,28 +1,25 @@
-const user = {
-  firstName: 'Trung',
-  lastName: 'Doan'
-};
+import logo from './logo.svg';
+import './App.css';
 
-function formatName(user) {
-  return `${user.firstName} ${user.lastName}`;
-}
-
-
-const App = () => {
-  const now = new Date();
-  const a = 10;
-  const b = 20;
+function App() {
   return (
-    <div>
-      <h1>
-        Hello, {formatName(user)}!
-      </h1>
-      <p>Hello world, it is {now.toString()}</p>
-      <p>
-        {a} plus {b} is {a + b}
-      </p>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
